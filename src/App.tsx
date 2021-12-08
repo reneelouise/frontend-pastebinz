@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import ShowQuotes from './components/ShowQuotes';
 import PasteQuotes from './components/PasteQuotes';
 
+interface Quotes {
+  index: number;
+  input: string;
+}
+
 function App() {
+
+  const [result, setResult] = useState<Quotes[]>([])
+
   return (
     <div className="App">
       <PasteQuotes />
-      <ShowQuotes />
-      
+      <ShowQuotes result={result} setResult={setResult} />
+
     </div>
   );
 }
