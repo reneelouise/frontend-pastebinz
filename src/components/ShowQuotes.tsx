@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Dispatch, SetStateAction } from "react";
+import React, {useState, useEffect } from "react";
 
 
 interface Quotes {
@@ -18,24 +18,29 @@ function ShowQuotes(props: { result: Array<Quotes>, setResult: (arg: Quotes[]) =
         }
         catch (err: any) {
             console.error(err.message)
-
+    
         }
     }
-    useEffect(() => {
-        getQuotes();
-    }, []);
+    
+      useEffect(() => {
+            getQuotes();
+        }, []);
+        
     console.log(result)
+
+
 
     return (
         <>
-            <div className="container">
+            
                 <h2>Public Pastes</h2>
-                <p>{result[0].input}</p>
-                {result.map((quote, index) => {
-                    <div key={quote.index}>
+                <div className="container">
+              
+               
+                {result.map((quote) => {
+                   return (<div key={quote.index}>
                         <p>{quote.input}</p>
-                        <p>{result[index].input}</p>
-                    </div>
+                    </div>)
                 }
                 )}
             </div>
