@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import ShowQuotes from './components/ShowQuotes';
 import PasteQuotes from './components/PasteQuotes';
+import SubmitButton from './components/SubmitButton';
 
 interface Quotes {
   index: number;
@@ -9,13 +10,15 @@ interface Quotes {
 }
 
 function App() {
+  //@ts-ignore
+  const [result, setResult] = useState<Quotes[]>([]);
 
-  const [result, setResult] = useState<Quotes[]>([])
 
   return (
     <div className="App">
       <PasteQuotes />
-      <ShowQuotes result={result} setResult={setResult} />
+      <SubmitButton/>
+       <ShowQuotes result={result} setResult={setResult} />
 
     </div>
   );

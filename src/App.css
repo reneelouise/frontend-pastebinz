@@ -42,3 +42,15 @@
   width:90%;
   height:300px;
 }
+
+.container {
+  border: 1px solid black ;
+  margin-top: 10px;
+  border-radius: 20px;
+  background-color: #4fbddc;
+
+}
+
+.btn{
+  margin-top: 10px;
+}
