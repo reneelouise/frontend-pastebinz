@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import ShowQuotes from './components/ShowQuotes';
 import PasteQuotes from './components/PasteQuotes';
@@ -18,7 +18,7 @@ function App() {
     <div className="App">
       <PasteQuotes />
 
-       <ShowQuotes result={result} setResult={setResult} />
+      <ShowQuotes result={result} setResult={setResult} />
 
     </div>
   );

@@ -18,27 +18,27 @@ function ShowQuotes(props: { result: Array<Quotes>, setResult: (arg: Quotes[]) =
         }
         catch (err: any) {
             console.error(err.message)
-    
+
         }
     }
-    
-      useEffect(() => {
-            getQuotes();
-        }, []);
-        
+
+    useEffect(() => {
+        getQuotes();
+    }, []); // eslint-disable-line 
+
     console.log(result)
 
 
 
     return (
         <>
-            
-                <h2>Public Pastes</h2>
-                <div className="container">
-              
-               
+
+            <h2>Public Pastes</h2>
+            <div className="container">
+
+
                 {result.map((quote) => {
-                   return (<div key={quote.index}>
+                    return (<div key={quote.index}>
                         <p>{quote.input}</p>
                     </div>)
                 }
