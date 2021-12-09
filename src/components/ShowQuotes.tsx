@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 
 interface Quotes {
@@ -9,6 +9,7 @@ interface Quotes {
 
 function ShowQuotes(props: { result: Array<Quotes>, setResult: (arg: Quotes[]) => void }): JSX.Element {
     const { result, setResult } = props
+    const [isClicked, setIsCliked] = useState("")
 
     const getQuotes = async () => {
         try {
@@ -24,9 +25,9 @@ function ShowQuotes(props: { result: Array<Quotes>, setResult: (arg: Quotes[]) =
 
     useEffect(() => {
         getQuotes();
-    }, []); // eslint-disable-line 
+    }, [result]); // eslint-disable-line 
 
-    console.log(result)
+    // console.log(result, "Hello world")
 
 
 
@@ -39,11 +40,14 @@ function ShowQuotes(props: { result: Array<Quotes>, setResult: (arg: Quotes[]) =
 
                 {result.map((quote) => {
                     return (<div key={quote.index}>
-                        <p>{quote.input}</p>
+                        <p className="textQuote" onClick={() => setIsCliked(quote.input)}>{quote.input}</p>
+                        <br></br>
                     </div>)
                 }
                 )}
             </div>
+            <h2>Expanded quotes</h2>
+            <p>{isClicked}</p>
         </>
     );
 };
