@@ -33,24 +33,29 @@ function ShowQuotes(props: {
   return (
     <>
       <div className="wholePage">
-        <h2>Public Pastes</h2>
-        <div className="container">
-          {result.map((quote) => {
-            return (
-              <div key={quote.index}>
-                <p
-                  className="textQuote"
-                  onClick={() => setIsCliked(quote.input)}
-                >
-                  {quote.input}
-                </p>
-                <br></br>
-              </div>
-            );
-          })}
+        <div>
+            <h2>Public Pastes</h2>
+            <div className="container">
+            {result.map((quote) => {
+                return (
+                <div key={quote.index}>
+                    <p
+                    className="textQuote"
+                    onClick={() => setIsCliked(quote.input)}
+                    >
+                    {quote.input}
+                    </p>
+                    <br></br>
+                </div>
+            
+                ); 
+            })}
+          </div>
         </div>
-        <h2>Expanded quotes</h2>
-        <p className="expandedQuotes">{isClicked}</p>
+            <div className="expandedQuotes">
+                <h2>Expanded quotes:</h2>
+                <p>{isClicked}</p>
+            </div>
       </div>
     </>
   );

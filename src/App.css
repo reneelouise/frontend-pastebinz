@@ -75,10 +75,13 @@
 .expandedQuotes {
   margin: 20px;
   padding: 20px;
+  width: 1000px
 }
 
 .wholePage {
   display: flex;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
