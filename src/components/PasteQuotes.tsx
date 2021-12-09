@@ -13,7 +13,7 @@ const PasteQuotes = () => {
         }
       );
       setInputQuote("");
-      console.log("I am the body", body);
+      console.log(response);
     } catch (err: any) {
       console.error(err.message);
     }

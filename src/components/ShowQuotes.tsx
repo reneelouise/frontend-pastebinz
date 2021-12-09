@@ -21,10 +21,10 @@ function ShowQuotes(props: { result: Array<Quotes>, setResult: (arg: Quotes[]) =
     
         }
     }
-    
+   
       useEffect(() => {
             getQuotes();
-        }, []);
+        }, []);// eslint-disable-line 
         
     console.log(result)
 
