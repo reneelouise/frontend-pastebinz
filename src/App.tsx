@@ -18,7 +18,7 @@ function App() {
     <div className="App">
       <PasteQuotes />
 
-       <ShowQuotes result={result} setResult={setResult} />
+      <ShowQuotes result={result} setResult={setResult} />
 
     </div>
   );
