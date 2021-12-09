@@ -37,14 +37,13 @@
   }
 }
 
-
-.add-quote{
-  width:90%;
-  height:300px;
+.add-quote {
+  width: 90%;
+  height: 300px;
 }
 
 .container {
-  border: 1px solid black ;
+  border: 1px solid black;
   margin-top: 10px;
   border-radius: 20px;
   background-color: #4fbddc;
@@ -56,20 +55,30 @@
   margin: 20px;
 }
 
-.btn{
+.btn {
   margin-top: 20px;
-
 }
 
 /* .textQuote {
   -webkit-line-clamp: 2;
 } */
 
-.textQuote{
+.textQuote {
   word-break: break-word;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 5; /* number of lines to show */
   -webkit-box-orient: vertical;
+}
+
+.expandedQuotes {
+  margin: 20px;
+  padding: 20px;
+}
+
+.wholePage {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
