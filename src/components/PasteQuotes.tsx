@@ -1,7 +1,23 @@
 import React, { useState } from "react";
-import ShowQuotes from "./ShowQuotes";
 
 const PasteQuotes = () => {
+  async function handleSubmitQuote(input: string | null) {
+    try {
+      const body = { input };
+      const response = await fetch(
+        "https://rbgdatabase.herokuapp.com/rbgquotes",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+        }
+      );
+      setInputQuote("");
+      console.log("I am the body", body);
+    } catch (err: any) {
+      console.error(err.message);
+    }
+  }
   const [inputQuote, setInputQuote] = useState("");
   return (
     <>
@@ -14,17 +30,14 @@ const PasteQuotes = () => {
         onChange={(e) => setInputQuote(e.target.value)}
       ></input>
       <br></br>
-      <button className="submitButton" onClick={() => handleSubmitQuote(inputQuote)}>Subimt</button>
+      <button
+        className="submitButton"
+        onClick={() => handleSubmitQuote(inputQuote)}
+      >
+        Subimt
+      </button>
     </>
   );
 };
 
-async function handleSubmitQuote(input: string | null) {
-try {
-    
-} catch (err:  any) {
-    console.error(err.message)
-    
-}
-}
 export default PasteQuotes;
