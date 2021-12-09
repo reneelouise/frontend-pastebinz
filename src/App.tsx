@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import ShowQuotes from './components/ShowQuotes';
 import PasteQuotes from './components/PasteQuotes';
-import SubmitButton from './components/SubmitButton';
+
 
 interface Quotes {
   index: number;
@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="App">
       <PasteQuotes />
-      <SubmitButton/>
+
        <ShowQuotes result={result} setResult={setResult} />
 
     </div>
