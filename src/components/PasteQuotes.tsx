@@ -34,7 +34,7 @@ const PasteQuotes = () => {
         className="submitButton"
         onClick={() => handleSubmitQuote(inputQuote)}
       >
-        Subimt
+        Submit
       </button>
     </>
   );
